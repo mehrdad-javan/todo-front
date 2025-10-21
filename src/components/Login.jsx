@@ -1,14 +1,15 @@
-import React from 'react';
-
-import LoginForm from './LoginForm';
-import SidebarBrand from './SidebarBrand';
+import React from "react";
+import LoginForm from "./LoginForm";
+import SidebarBrand from "./SidebarBrand";
 
 const Login = () => {
     return (
-        <div className="container-fluid min-vh-100 p-0">
-            <div className="row g-0 h-100">
-                <SidebarBrand/>
-                <LoginForm/>
+        <div className="min-h-screen grid md:grid-cols-5 bg-slate-50 dark:bg-slate-950">
+            <div className="hidden md:block md:col-span-2">
+                <SidebarBrand />
+            </div>
+            <div className="flex items-center justify-center md:col-span-3 p-6">
+                <LoginForm />
             </div>
         </div>
     );

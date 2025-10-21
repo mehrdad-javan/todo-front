@@ -35,13 +35,16 @@ const LoginForm = () => {
             {/* Mobile brand */}
             <div className="mb-8 flex items-center gap-2 md:hidden text-indigo-500">
                 <CheckSquare className="h-6 w-6" />
-                <h4 className="text-lg font-semibold text-slate-900 dark:text-slate-100">To-do App</h4>
+                <h4 className="text-lg font-semibold ui-text-primary">To-do App</h4>
             </div>
 
-            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+            {/* Card */}
+            <div className="ui-card">
                 <div className="mb-6">
-                    <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">Login</h1>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">Enter your credentials to access your account</p>
+                    <h1 className="text-2xl font-bold ui-text-primary">Login</h1>
+                    <p className="mt-1 text-sm ui-text-muted">
+                        Enter your credentials to access your account
+                    </p>
                 </div>
 
                 {error && (
@@ -53,9 +56,11 @@ const LoginForm = () => {
                 <form onSubmit={handleSubmit} className="space-y-4">
                     {/* Username */}
                     <div>
-                        <label htmlFor="username" className="block text-sm font-medium text-slate-700 dark:text-slate-300">Username</label>
-                        <div className="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950/40 px-3 py-2 focus-within:ring-2 focus-within:ring-indigo-500">
-                            <UserRound className="h-5 w-5 text-slate-400" />
+                        <label htmlFor="username" className="block text-sm font-medium ui-text-secondary">
+                            Username
+                        </label>
+                        <div className="ui-input">
+                            <UserRound className="h-5 w-5 ui-icon" />
                             <input
                                 id="username"
                                 name="username"
@@ -65,16 +70,18 @@ const LoginForm = () => {
                                 onChange={handleInputChange}
                                 required
                                 disabled={isLoading}
-                                className="w-full bg-transparent border-0 p-0 outline-none placeholder:text-slate-400 text-slate-900 dark:text-slate-100"
+                                className="w-full bg-transparent border-0 p-0 outline-none placeholder:ui-text-subtle ui-text-primary"
                             />
                         </div>
                     </div>
 
                     {/* Password */}
                     <div>
-                        <label htmlFor="password" className="block text-sm font-medium text-slate-700 dark:text-slate-300">Password</label>
-                        <div className="mt-1 flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950/40 px-3 py-2 focus-within:ring-2 focus-within:ring-indigo-500">
-                            <Lock className="h-5 w-5 text-slate-400" />
+                        <label htmlFor="password" className="block text-sm font-medium ui-text-secondary">
+                            Password
+                        </label>
+                        <div className="ui-input">
+                            <Lock className="h-5 w-5 ui-icon" />
                             <input
                                 id="password"
                                 name="password"
@@ -84,15 +91,19 @@ const LoginForm = () => {
                                 onChange={handleInputChange}
                                 required
                                 disabled={isLoading}
-                                className="w-full bg-transparent border-0 p-0 outline-none placeholder:text-slate-400 text-slate-900 dark:text-slate-100"
+                                className="w-full bg-transparent border-0 p-0 outline-none placeholder:ui-text-subtle ui-text-primary"
                             />
                             <button
                                 type="button"
                                 onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                                 disabled={isLoading}
-                                className="rounded-lg p-1.5 hover:bg-slate-100 dark:hover:bg-slate-800"
+                                className="rounded-lg p-1.5 hover:ui-hover"
                             >
-                                {isPasswordVisible ? <EyeOff className="h-5 w-5 text-slate-400" /> : <Eye className="h-5 w-5 text-slate-400" />}
+                                {isPasswordVisible ? (
+                                    <EyeOff className="h-5 w-5 ui-icon" />
+                                ) : (
+                                    <Eye className="h-5 w-5 ui-icon" />
+                                )}
                             </button>
                         </div>
                     </div>
@@ -117,7 +128,7 @@ const LoginForm = () => {
                     </button>
                 </form>
 
-                <div className="mt-6 text-center md:hidden text-xs text-slate-500 dark:text-slate-400">
+                <div className="mt-6 text-center md:hidden text-xs ui-text-subtle">
                     © 2025 To-do App. All rights reserved.
                 </div>
             </div>
